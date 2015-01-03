@@ -1,0 +1,18 @@
+<html ng-app="triforceApp">
+  <head>
+    <script src="../bower_components/lodash/dist/lodash.min.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="js/app.js"></script>
+  </head>
+  <body>
+    <div ng-controller="TriforceCtrl as triforce">
+      <h1>triforce</h1>
+      <div ng-hide="dnamolecules.length">
+        loading ...
+      </div>
+      <div ng-repeat="dnamolecule in dnamolecules">
+        <h3>{{ dnamolecule.name }}</h3>
+      </div>
+    </div>
+  </body>
+</html>
