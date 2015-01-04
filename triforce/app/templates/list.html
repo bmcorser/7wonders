@@ -1,0 +1,6 @@
+<div ng-hide="dnamolecules.length">
+  loading ...
+</div>
+<div ng-repeat="dnamolecule in dnamolecules">
+  <a href="#/dnamolecule/{{ dnamolecule.id }}"><h3>{{ dnamolecule.name }}</h3></a>
+</div>

@@ -10,12 +10,7 @@
       function($scope, $http, backend, cache){
         var instruction = {read: {page: 1}};
         $scope.dnamolecules = [];
-        $scope.gcContent = [];
         backend(instruction).success(function (data, status) {
-          $scope.gcContent = _.map(data.read, function (dnamolecule) {
-            var gcCount = dnamolecule.sequence.bases.match(/[GC]/g).length;
-            return gcCount / dnamolecule.length * 100;
-          });
           _.map(data.read, function (dnamolecule) {
             cache.put(dnamolecule.id, dnamolecule);
           });
@@ -38,12 +33,17 @@
         var dnamolecule = cache.get($routeParams.dnamoleculeId);
         if (dnamolecule) {
           $scope.dnamolecule = dnamolecule;
+          var gcCount = dnamolecule.sequence.bases.match(/[GC]/g).length;
+          $scope.gcContent = gcCount / dnamolecule.length * 100;
+          console.log($scope.gcContent);
         } else {
           var instruction = {read: {filter: {id: $routeParams.dnamoleculeId}}};
           backend(instruction).success(function (data, status) {
             var dnamolecule = data.read[0];
             cache.put(dnamolecule.id, dnamolecule);
             $scope.dnamolecule = dnamolecule;
+            var gcCount = dnamolecule.sequence.bases.match(/[GC]/g).length;
+            $scope.gcContent = (gcCount / dnamolecule.length * 100).toFixed(2);
           }).error(function (data, status) {
             console.log(data, status);
           });

@@ -1,0 +1,19 @@
+<div ng-hide="dnamolecule.id">
+  loading ...
+</div>
+<div>
+  <h2>{{ dnamolecule.name }}</h2>
+  <ul>
+    <li>Length: {{ dnamolecule.length }}</li>
+    <li>GC content: {{ gcContent }}%</li>
+    <li>Num features: {{ dnamolecule.dnafeatures.length }}</li>
+  </ul>
+  <h3 ng-hide="!dnamolecule.dnafeatures.length">Features</h3>
+  <div ng-repeat="dnafeature in dnamolecule.dnafeatures">
+    <h4>{{ dnafeature.feature.name }}</h4>
+    <ul>
+      <li>Location: {{ dnafeature.start }} - {{ dnafeature.start }}</li>
+      <li>Category: {{ dnafeature.dnafeature.category.name }}</li>
+    </ul>
+  </div>
+</div>
