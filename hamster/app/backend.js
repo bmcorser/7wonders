@@ -30,7 +30,7 @@ var list = function () {
   var returnRead = function (data) {
     return data.read;
   };
-  return callBackend({}, returnRead);
+  return callBackend({read: {filter: {}}}, returnRead);
 };
 var backend = {
   list: list,
