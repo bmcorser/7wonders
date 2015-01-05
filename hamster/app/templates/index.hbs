@@ -1,3 +1,5 @@
-{#each}
-    {{ name }}
-{/each}
+<ul>
+{{#each dnamolecule in model}}
+    <li>{{#link-to 'dnamolecule' dnamolecule.id}}{{ dnamolecule.name }}{{/link-to}}</li>
+{{/each}}
+</ul>

@@ -1,9 +1,11 @@
-export const postDefaults = {
-  url: 'https://localhost:8080/api/inventory/crud',
+import $ from "jquery";
+
+var postDefaults = {
+  method: 'POST',
+  url: 'http://localhost:8080/api/inventory/crud',
   headers: {Authorization: 'Basic Ym1jb3JzZXJAZ21haWwuY29tOmFiYzEyM2Z1'},
 };
-
-export const crudDefaults = {
+var crudDefaults = {
   object: 'dnamolecule',
   read: {
     filter: {},
@@ -13,3 +15,25 @@ export const crudDefaults = {
     page: 1,
   }
 };
+var callBackend = function (overrides, handleRead) {
+  var data = $.extend(crudDefaults, overrides);
+  var opts = $.extend(postDefaults, {data: JSON.stringify(data)});
+  return $.ajax(opts).then(handleRead);
+};
+var one = function (id) {
+  var returnRead = function (data) {
+    return data.read[0];
+  };
+  return callBackend({read: {filter: {id: id}}}, returnRead);
+};
+var list = function () {
+  var returnRead = function (data) {
+    return data.read;
+  };
+  return callBackend({}, returnRead);
+};
+var backend = {
+  list: list,
+  one: one,
+};
+export default backend;
