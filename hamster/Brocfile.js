@@ -4,6 +4,17 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 var app = new EmberApp();
 
+/*
+app.import({
+  development: 'vendor/lodash/dist/lodash.js',
+  production:  'vendor/lodash/dist/lodash.min.js'
+}, {
+  'lodash': [
+    'default'
+  ]
+});
+*/
+
 // Use `app.import` to add additional libraries to the generated
 // output files.
 //
