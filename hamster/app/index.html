@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <script src="../bower_components/lodash/dist/lodash.min.js"></script>
+    <script src="../bower_components/handlebars/handlebars.js"></script>
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/ember/ember.js"></script>
+    <script src="js/app.js"></script>
+  </head>
+  <body>
+    <script type="text/x-handlebars">
+      <a href="#/"><h1>hamster</h1></a>
+      {{ outlet }}
+    </script>
+    <script type="text/x-handlebars" id="index">
+      {{#each dnamolecule in dnamolecules}}
+        {{#link-to 'dnamolecule'}}<h3>{{ name }}</h3>{{/link-to}}
+      {{/each}}
+    </script>
+    <script type="text/x-handlebars" id="dnamolecule">
+      <div>
+        <a href="#/dnamolecule/{{ dnamolecule.id }}"><h3>{{ dnamolecule.name }}</h3></a>
+      </div>
+    </script>
+  </body>
+</html>
