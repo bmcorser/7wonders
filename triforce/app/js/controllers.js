@@ -43,7 +43,7 @@
             cache.put(dnamolecule.id, dnamolecule);
             $scope.dnamolecule = dnamolecule;
             var gcCount = dnamolecule.sequence.bases.match(/[GC]/g).length;
-            $scope.gcContent = (gcCount / dnamolecule.length * 100).toFixed(2);
+            $scope.gcContent = gcCount / dnamolecule.length * 100;
           }).error(function (data, status) {
             console.log(data, status);
           });

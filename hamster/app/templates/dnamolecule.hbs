@@ -1,0 +1,16 @@
+<h2>{{ model.name }}</h2>
+<ul>
+    <li>Length: {{ model.length }}</li>
+    <li>GC content: {{n-decimal gcContent 2}}%</li>
+    <li>Num features: {{ model.dnafeatures.length }}</li>
+</ul>
+{{#if dnamolecule.dnafeatures.length}}
+    <h3 ng-hide="">Features</h3>
+{{/if}}
+{{#each dnafeature in dnamolecule.dnafeatures}}
+<h4>{{ dnafeature.feature.name }}</h4>
+<ul>
+    <li>Location: {{ dnafeature.start }} - {{ dnafeature.start }}</li>
+    <li>Category: {{ dnafeature.dnafeature.category.name }}</li>
+</ul>
+{{/each}}
