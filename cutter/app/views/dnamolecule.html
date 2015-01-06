@@ -1,0 +1,28 @@
+<div data-bind="visible: !name">
+  loading ...
+</div>
+<div>
+  <h2 data-bind="text: name"></h2>
+  <ul>
+    <li>Length: <span data-bind="text: length" /></li>
+    <li>GC content: <span data-bind="text: gcContent" />%</li>
+    <li>Num features:
+      <span data-bind="dnafeatures.length"></span>
+    </li>
+  </ul>
+  <h3 data-bind="visible: !dnafeatures().length">Features</h3>
+  <div data-bind="foreach: dnafeatures()">
+    <h4 data-bind="text: dnafeature.name"></h4>
+    <ul>
+      <li>Location:
+        <span data-bind="text: start"></span>
+        -
+        <span data-bind="text: start"></span>
+      </li>
+      <li>Category:
+        <span data-bind="text: dnafeature.category.name">
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>

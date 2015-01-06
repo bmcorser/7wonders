@@ -3,6 +3,7 @@ Groovy
 
     - Chrome extension could be useful
     - ember-cli_ gives ES6 modules and forces amazing code organisation
+    - Tonnes of documentation, writing is fine
 
 .. _ember-cli: https://github.com/ember-cli/ember-cli
 
