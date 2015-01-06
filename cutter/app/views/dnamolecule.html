@@ -7,11 +7,11 @@
     <li>Length: <span data-bind="text: length" /></li>
     <li>GC content: <span data-bind="text: gcContent" />%</li>
     <li>Num features:
-      <span data-bind="dnafeatures.length"></span>
+      <span data-bind="text: dnafeatures().length"></span>
     </li>
   </ul>
-  <h3 data-bind="visible: !dnafeatures().length">Features</h3>
-  <div data-bind="foreach: dnafeatures()">
+  <h3 data-bind="visible: dnafeatures().length">Features</h3>
+  <div data-bind="foreach: dnafeatures">
     <h4 data-bind="text: dnafeature.name"></h4>
     <ul>
       <li>Location:

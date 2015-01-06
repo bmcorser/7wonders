@@ -6,15 +6,15 @@ define(function (require) {
     var gcCount = dnamolecule.sequence.bases.match(/[GC]/g).length;
     return gcCount / dnamolecule.length * 100;
   };
-  return {
-    activate: function (id) {
-      var binding = this;
+  return function () {
+    var binding = this;
+    this.activate = function (id) {
       return backend.one(id).then(function (dnamolecule) {
         ko.utils.extend(binding, koMapping.fromJS(dnamolecule));
-        ko.utils.extend(binding, {
+        return ko.utils.extend(binding, {
           gcContent: gcContent(dnamolecule),
         });
       });
-    }
+    };
   };
 });
