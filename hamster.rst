@@ -1,10 +1,11 @@
 Groovy
 ------
 
-    - Chrome extension could be useful
+    - `Chrome extension`_ could be useful
     - ember-cli_ gives ES6 modules and forces amazing code organisation
     - Tonnes of documentation, writing is fine
 
+.. _`Chrome extension`: https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi?hl=en
 .. _ember-cli: https://github.com/ember-cli/ember-cli
 
 Not so groovy
@@ -19,7 +20,7 @@ Not so groovy
     - Configuration by convention extends to the backend!?
     - ``ember-data`` still in beta, integrating with crudpile will be a chore
     - The "Ember Way", `case in point`_.
-    - Caremad about some stuffs? (``extends``, etc)
+    - Caremad about some stuffs? (``extends``, etc) Maybe trying to make JS have classes
     - Djangoey, esp. with ``ember-cli``
 
 .. _period: http://emberjs.com/guides/deprecations/#toc_more-consistent-handlebars-scope
