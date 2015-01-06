@@ -23,4 +23,4 @@ Not so groovy
     - Djangoey, esp. with ``ember-cli``
 
 .. _period: http://emberjs.com/guides/deprecations/#toc_more-consistent-handlebars-scope
-.. _`case in point': http://emblemjs.com/
+.. _`case in point`: http://emblemjs.com/
